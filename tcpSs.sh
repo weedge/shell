@@ -1,7 +1,6 @@
 #!/bin/bash
 #通过netstat 统计tcp数据，每次1秒间隔的相对值数据
 netstat -s | grep -A 10 Tcp:
-
 while true; do
 	netstat -s | grep -A 10 Tcp: | awk 'NR>1 {$1=$1; print}'
 	printf "\n"

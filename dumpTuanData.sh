@@ -26,13 +26,13 @@ then
     db="tuan"
 fi 
 
-i=`mysql -hdaohang04.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan -e "show tables" | awk '!/Tables_in_tuan/ {print $0}' | xargs echo`
+i=`mysql -h****.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan -e "show tables" | awk '!/Tables_in_tuan/ {print $0}' | xargs echo`
 #i=`mysql -hdaohang04.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan -e "show tables" | awk '/mobile/ {print $0}' | xargs echo`
 
 if [ x$1 = "xonline" ];then
     for k in $i;do
-        echo "mysqldump -hdaohang04.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan $k > /search/tuan_sql/$k.sql"
-        mysqldump -hdaohang04.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan $k > /search/tuan_sql/$k.sql
+        echo "mysqldump -h*****.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan $k > /search/tuan_sql/$k.sql"
+        mysqldump -h*****.mysql.cnc.sogou-op.org -pdhziyuan123 -udhziyuan tuan $k > /search/tuan_sql/$k.sql
     done
 fi
 if [ x$1 = "xdev" ] || [ x$1 = "xtest" ];then

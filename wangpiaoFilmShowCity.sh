@@ -1,7 +1,7 @@
 #!/bin/bash
 #@Author: wuyong
 #@Date: Mon Jan 26 23:16:49 CST 2015
-#@Desc: 统计网票有影院信息的城市
+#@Desc: 统计网票有影院排期信息的城市
 
 day=`date "+%Y-%m-%d"`
 

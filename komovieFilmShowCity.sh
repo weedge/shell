@@ -35,10 +35,11 @@ do
 		if [ "$city" = "" ];then
 			continue;
 		else
+			cities="${cities} ${city}"
 			break;
 		fi
 	done
-	cities="${cities} ${city}"
+
 done 
 
 echo ${cities} | sed "s/ /\n/g" | sort | uniq

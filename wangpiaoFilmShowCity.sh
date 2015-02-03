@@ -39,10 +39,10 @@ for city_id in ${city_ids[*]};do
             #echo -e "${cinema_id}没有~\n";
             continue;
         else
+            plan_cities="$plan_cities ${cities[$city_id]}"
             break;
         fi
     done
-    plan_cities="$plan_cities ${cities[$city_id]}"
     usleep 300
 done
 

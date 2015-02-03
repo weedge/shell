@@ -19,11 +19,11 @@ do
 			#echo "${j}没有影讯~~"
 			continue
 		else
+			plan_cities="${plan_cities} ${i}"
 			break
 		fi
 		usleep 400
 	done
-	plan_cities="${plan_cities} ${i}"
 done 
 
 echo $plan_cities | sed 's/ /\n/g' | sort | uniq

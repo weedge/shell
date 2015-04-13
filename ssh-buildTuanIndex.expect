@@ -1,0 +1,40 @@
+#!/usr/bin/expect
+# 2015年 04月 03日 星期四 16:53:34 CST
+# wuyong
+# 神奇的expect 语言
+
+if { [llength $argv] < 4 } {
+	puts "### USAGE:  $argv0  host port username password r/f"
+	exit 1
+}
+
+set host [lindex $argv 0]
+set port [lindex $argv 1]
+set username [lindex $argv 2]
+set password [lindex $argv 3]
+
+set timeout 3600
+
+spawn ssh -p $port $username@$host "/usr/local/coreseek/bin/indexer -c /usr/local/coreseek/etc/csft_tuan.conf tuan --rotate"
+
+expect password:
+	send "$password\r"
+
+expect succesfully
+	puts "success"
+	exit 1
+
+expect WARNING
+	puts "fail indices NOT rotated,please searchd by $username"
+	exit 1
+
+expect FATAL
+	puts "fail"
+	exit 1
+
+expect failed
+	puts "fail"
+	exit 1
+
+expect eof
+exit

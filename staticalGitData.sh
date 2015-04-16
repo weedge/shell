@@ -34,6 +34,6 @@ if [ "$#" -eq 1 ] 2>/dev\null ;then
 
 	cd -
 else
-	echo -e "请输入项目所在的绝对路径~!\n"
+	echo -e "请输入项目所在路径~!\n"
 fi
 

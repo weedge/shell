@@ -29,6 +29,9 @@ if [ "$#" -eq 1 ] 2>/dev\null ;then
 	git log --pretty=format:%ae | gawk -- '{ ++c[$0]; } END { for(cc in c) printf "%5d %s\n",c[cc],cc; }' | sort -u -n -r 
 	sleep 3
 
+	echo -e "\n统计项目中代码数据，项目比较大的话，请骚等，统计需要时间（需要安装cloc）\n结果如下：\n"
+	cloc $1/ 
+
 	cd -
 else
 	echo -e "请输入项目所在的绝对路径~!\n"

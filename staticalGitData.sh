@@ -4,7 +4,7 @@
 git=`ls -a | grep ^.git$`
 path=`pwd`
 	
-if [ "x$git" == "x" ] 2>/dev\null ;then  
+if [ "x$git" == "x" ] 2>/dev/null ;then  
 	echo -e "项目所在路径${path}中没有版本库git管理~!\n"
 else
 	#统计某人的代码提交量，包括增加，删除
